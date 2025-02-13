@@ -1,0 +1,35 @@
+.heart {
+  position: absolute;
+  top: -20px;
+  color: #ff0000;
+  animation: animate 5s linear forwards;
+  /* you can set infinite too */
+}
+
+.heart::before {
+  content: "\f004"; /* FontAwesome heart icon */
+  font-family: FontAwesome;
+  text-shadow: 0 0 5px #000000, 0 0 20px #fff, 0 0 50px #fff;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heart {
+    font-size: 8px;
+  }
+}
